@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>M9 SKM</title>
+	<meta name="viewport" content="width=720,target-densitydpi=device-dpi,user-scalable=no">
+	<style>
+		body{position:relative;overflow:hidden;width:720px;margin:auto;background-color:#16120f;color:#fff;text-align:center;font-family: "Noto Sans Myanmar", "Pyidaungsu";}
+		#wrap{position:relative;width:720px;padding-top:468px; background-image:url(images/bg.png);background-repeat:no-repeat;background-position:50% 0px;background-size:720px 539px;}
+		#downApk>div{margin-left:205px; width:309px;height:92px;background-image:url(images/download.png);background-size:309px 92px;}
+		#downGP>div{width:309px;height:92px;background-image:url(images/down-gp.png);background-size:309px 92px;}
+		#downIpa>div{margin-left:189px;width:341px;height:92px;background-image:url(images/down-ios.png);background-size:341px 92px;}
+		.text{margin:10px 50px 0 50px;font-size:16px;text-align:left;}
+		.advs{margin-top:5px;}.advs img {width: 297px;height: 414px;}.advs img:first-child{content: url(images/show1.png);}
+		.advs img:nth-child(2){margin-left: 21px;content: url(images/show2.png);}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div class="buttons android"><a id="downApk" href="/down/m9skm.apk"><div>�&nbsp;</div></a></div>
+	<div class="buttons ios" style="display: none;"><a id="downIpa" href="https://eng.dolameng.com/iz43co"><div>�&nbsp;</div></a></div>
+	<div class="text">
+		အကောင့်အခမဲ့ဒေါင်းလုတ်ပြီး စာရင်းသွင်းရုံဖြင့် ဆုလာဘ်များရယူလိုက်ပါ 
+		<p>
+		M9ဂိမ်းစင်တာမှာ လက်ရာမြောက်သော ဂရပ်ဖစ်ပုံလှလှနှင့် စွဲငြိဖွယ်ကောင်းသောအသံပါဝါရှိသည့်အဆင့်မြင့်ရှမ်းကိုးမီးဂိမ်းကို ကစားကြည့်လိုက်ပါ
+		</p><p>
+		အွန်လိုင်းကာစီနိုကစားပြီး နေ့ချင်းညချင်းကြွယ်ဝချမ်းသာခြင်း၏ စိတ်လူပ်ရှားမူကိုခံစားကြပါစို့
+	</p></div>
+	<div class="advs">
+		<img> <img>
+	</div>
+<script>
+	var appInfo = {
+		urlScheme: 'm9skm',
+		urlAPK: '/down/m9skm.apk',
+		urlIOS: 'https://eng.dolameng.com/iz43co',
+	};
+	function getParam(key, url) { 
+		var u = url || window.location.search,
+			reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)"),
+			r = u.substr(u.indexOf("\?") + 1).match(reg);
+		return r ? decodeURIComponent(r[2]) : null;
+	} 
+	function id2e(s) { return document.getElementById(s); }
+	function cls2e(s) { return document.getElementsByClassName(s)[0]; }
+
+	var isIOS = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
+	function updateInfo() {
+		cls2e(isIOS ? 'android':'ios').style.display = 'none';
+		//cls2e('ios').style.display = 'none';
+		id2e('downIpa').href = appInfo.urlIOS;
+		id2e('downApk').href = appInfo['urlAPK' + getParam('partner')] || appInfo.urlAPK;
+	}
+	updateInfo();
+</script>
+
+
+</div></body></html>
